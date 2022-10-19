@@ -1,0 +1,84 @@
+{
+    "author": "",
+    "ua": "",
+    // 首页地址 用于获取 分类和首页推荐
+    "homeUrl": "https://chuangba14.xyz/",
+    // 手动设置分类，如果手动设置了分类则不使用上面的分类xpath获取分类  例如 "cateManual": {"电影": "1", "电视剧": "2"},
+    "cateManual": {
+"国产精品":"50"
+"亚洲无码":"2"
+"中文字幕":"3"
+"美女主播":"4"
+"动漫卡通":"5"
+"人妻熟女":"42"
+"重口味":"43"
+"三级伦理":"44"
+"精选口爆":"54"
+"亚洲有码":"47"
+"欧美情色":"48"
+"同性同志":"52"
+"91大神":"51"
+"pb亚洲":"53"
+"pb欧美":"55"
+    },
+    // 分类页地址 {cateId} 分类id {catePg} 当前页
+    "cateUrl": "https://chuangba14.xyz/index.php/vod/type/id/{cateId}/page/{catePg}.html",
+
+    // 同上面的homeVod字段 分类列表中的视频信息
+    "cateVodNode": "//div[@class='panel-body panel-padding']/ul/li/div/a",
+    "cateVodName": "/@title",
+    "cateVodId": "/@href",
+    "cateVodIdR": "/id/(\\w+).html",
+    "cateVodImg": "/div/img/@src",
+    "cateVodMark": "/span[@class='video-overlay']/text()",
+
+    // 详情页地址 用于获取详情页信息 及 播放列表和地址
+    "dtUrl": "https://chuangba14.xyz/index.php/vod/detail/id/{vid}.html",
+    // 详情节点
+    "dtNode": "//div[@class='web_list_detail']",
+    // 视频名
+    "dtName": "//div[(@class='pic']/a/@title",
+    "dtNameR": "",
+    // 视频图片
+    "dtImg": "//div[(@class='pic']/a/img/@src",
+    "dtImgR": "",
+    // 视频分类
+    // "dtCate": "//span[contains(@class,'text-muted hidden-xs') and contains(text(), '类型：')]/following-sibling::*/text()",
+    "dtCateR": "",
+    // 视频年份
+    // "dtYear": "//span[contains(@class,'text-muted hidden-xs') and contains(text(), '年份：')]/following-sibling::*/text()",
+    // 视频简介
+    // "dtDesc": "//div[contains(@class,'stui-content__desc col-pd clearfix')]/text()",
+    "dtDescR": "",
+        // 播放源节点
+    "dtFromNode": "//div[(@class='play']/a",
+    // 播放源名称 多个重名播放源
+    "dtFromName": "/button/text()",
+    // 二次处理正则
+    //"dtFromNameR": "(\\S+).0",
+    // 播放列表节点
+    "dtUrlNode": "//div[(@class='play']",
+    // 播放地址节点
+    "dtUrlSubNode": "/a",
+    // 播放地址
+    "dtUrlId": "/@href",
+    // 二次处理正则
+    "dtUrlIdR": "/index.php/vod/play/id/(\\S+).html",
+    // 剧集名称
+    "dtUrlName": "/button/text()",
+    // 二次处理正则
+    "dtUrlNameR": "",
+    // 播放页面的地址 {playUrl} 对应上面 dtUrlId 获取到的地址
+    "playUrl": "https://chuangba14.xyz/index.php/vod/play/id/{playUrl}.html",
+    // 解析webview的user-agent
+    "playUa": "",
+    // 搜索地址
+    "searchUrl": "https://chuangba14.xyz/index.php/vod/search.html?wd={wd}",
+    // 同上面的homeVod字段 搜索结果中的视频信息, 这里有对苹果cms suggest搜索接口的特殊支持，参考示例中的极品影视
+    "scVodNode": "//ul[@class='stui-vodlist clearfix']/li/a",
+    "scVodName": "/@title",
+    "scVodId": "/@href",
+    "scVodIdR": "/id/(\\w+).html",
+    "scVodImg": "/@data-original",
+    "scVodMark": "/span[@class='pic-text text-right']/text()"
+}
